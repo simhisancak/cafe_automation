@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base{
+    html, body, #root{
+        @apply h-full bg-gray-600 text-white; 
+    }
+    input:focus{
+        outline: 0;
+    }
+    select:focus{
+        outline: 0;
+    }
+    .wrapper{
+        height: 100%;
+        @apply flex flex-col;
+    }
+    
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    ::-webkit-scrollbar {
+        height: 5px;
+        width: 5px;
+        
+    }
+    /*::-webkit-scrollbar-track {
+        @apply bg-gray-600;
+    }*/
+    ::-webkit-scrollbar-track:hover {
+        @apply bg-gray-700;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400;
+    }
+    
+    button{
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .management_table{
+        min-width: 600px;
+    }
+
+    .management_table th, .management_table td{
+        text-align: start;
+        padding: 10px 20px 10px 0;
+        border-bottom: 1px solid;
+        @apply border-gray-700;
+    }
+    .management_table th {
+        @apply text-gray-300;
+        @apply bg-gray-700;
+        
+    }
+
+    .report_table{
+        min-width: 600px;
+    }
+
+    .report_table th, .report_table td{
+        text-align: center;
+        padding: 10px 20px 10px 0;
+        border-bottom: 1px solid;
+        @apply border-gray-700;
+    }
+    .report_table th {
+        @apply text-gray-300;
+        @apply bg-gray-700;
+    }
+    .report_table tbody tr{
+        cursor: pointer;
+    }
+    .report_table tbody tr{
+        -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+    }
+
+
+    .management_modal{
+        @apply h-screen fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none;
+    }
+    .management_form{
+        @apply mt-5 w-96;
+    }
+    .management_form ul li{
+        @apply mb-3;
+    }
+    .management_form ul li:last-child{
+        @apply mb-0;
+    }
+    .management_form ul li input{
+        @apply bg-gray-600 border-b focus:border-gray-800 w-full px-2;
+    }
+    .management_form ul li button{
+        @apply bg-gray-900 rounded-sm py-1 w-full;
+    }
+    .management_form ul li button:disabled{
+        @apply cursor-wait bg-opacity-30;
+    }
+    .management_form ul li select{
+        @apply bg-gray-600 mt-1 px-1 py-2 rounded-sm w-full border-b focus:border-gray-800;
+    }
+    .management_checkbox{
+        width : min-content !important;
+    }
+    .form_message{
+        @apply w-full flex justify-center items-center mb-3;
+    }
+    .message_error{
+        @apply text-red-500;
+    }
+    
+    .order_management_buttons_main{
+        @apply md:w-[5%] w-full md:min-w-28 bg-gray-700 md:overflow-y-auto;
+    }
+    .order_list_main{
+        @apply md:w-[40%] w-full flex flex-col justify-between bg-gray-700;
+    }
+    .order_list_main button:disabled{
+        @apply bg-opacity-30 cursor-wait text-gray-300;
+    }
+    .order_category_main{
+        @apply md:w-[10%] w-full md:min-w-37 bg-gray-700;
+    }
+    .order_product_main{
+        @apply md:w-[40%] w-full flex flex-col justify-between bg-gray-700;
+    }
+    .order_list{
+        @apply overflow-y-auto;    
+    }
+    .order_management_buttons{
+        /*@apply overflow-y-hidden; */   
+    }
+    .order_category{
+        word-break: break-all;
+        @apply h-full overflow-y-auto;
+    }
+    .order_product{
+        /*height: calc(100% - 13rem);*/
+        word-break: break-all;
+        @apply overflow-y-auto;
+    }
+    .order_management_item{
+        word-break: break-all;
+        @apply w-full less_md:w-24 h-20 bg-gray-800;   
+    }
+    .order_item{
+        @apply w-full h-11 bg-gray-800 px-2 py-1;   
+    }
+    .order_item_selected{
+        @apply border-2 border-pink-900;   
+    }
+    .order_item_deactive div div div{
+        @apply text-opacity-70 line-through;   
+    }
+    .order_category_item{
+        @apply w-full less_md:w-20 h-20 bg-gray-800;
+    }
+    .order_product_item{
+        @apply bg-gray-800 h-28 w-28 less_md:h-20 less_md:w-20 flex flex-col justify-center items-center; 
+    }
+    .order_product_item:disabled{
+        @apply bg-opacity-50 line-through; 
+    }
+
+    .order_product_item span{
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    /*.sidebar_menu li{
+        @apply less_md:flex less_md:justify-center w-full;
+    }
+    .sidebar_menu li a{
+        @apply w-full text-center;
+    }*/
+    
+    .sidebar_menu a{
+        @apply less_md:flex less_md:justify-center;
+    }
+    .sidebar_menu a label{
+        @apply cursor-pointer;
+    }
+    .sidebar_menu button{
+        @apply less_md:flex less_md:justify-center w-full;
+    }
+
+    .order_count button{
+        @apply bg-gray-900 h-10
+    }
+
+    .table_btn{
+        @apply w-36 h-36 flex flex-col items-center justify-center border m-2 border-gray-300 rounded-md hover:bg-gray-300 text-gray-300 hover:cursor-pointer hover:text-gray-800;
+    }
+    .table_btn_busy{
+        @apply w-36 h-36 flex flex-col items-center justify-center border-4 m-2 border-red-700 rounded-md hover:bg-red-700 text-gray-300 hover:cursor-pointer hover:text-gray-300;
+    }
+}

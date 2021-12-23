@@ -1,0 +1,11 @@
+/__pycache__
+/web/__pycache__
+
+/dist
+/build
+
+configs.json
+
+production.spec
+
+/venv
